@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { veiculosServices } from "../services/veiculos.Services.js";
-import { cache } from "react";
 
 export const veiculosRouter = Router();
 
