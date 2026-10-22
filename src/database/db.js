@@ -3,3 +3,4 @@ import "dotenv/config";
 
 const { Pool } = pg
 export const pool = new Pool()
+

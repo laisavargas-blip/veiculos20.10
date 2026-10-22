@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { veiculosServices } from "../services/veiculos.Services.js";
+import { cache } from "react";
 
 export const veiculosRouter = Router();
 
@@ -41,3 +42,13 @@ veiculosRouter.post("/", async (req, res) => {
         console.error (error);
     }
 });
+veiculosRouter.put("/:id", async (req, res) => {
+    const id = req.params.id
+    try{
+        const veiculos = await veiculosServices.update(req.body, id);
+         return res.status(200).json(veiculos);  
+          
+    }catch (error){
+      console.error ("deu erro kkk",error)
+    }
+})
