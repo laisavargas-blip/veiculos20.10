@@ -41,6 +41,9 @@ class veiculosService {
             veiculoAtualizado: res.rows[0]
         }
     }
+    async updateknex(){
+        const (veiculosAtualizados) = await knex('veiculos').where('id', id).update(dados).returning('*');
+    }
 
 
 }
